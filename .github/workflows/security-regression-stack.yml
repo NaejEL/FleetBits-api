@@ -152,9 +152,11 @@ jobs:
           cat > FleetBits-platform/docker/docker-compose.ci.override.yml <<'EOF'
           services:
             caddy:
-              command: caddy run --config /etc/caddy/Caddyfile.ci --adapter caddyfile
+              command: caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
               environment:
                 FLEET_DOMAIN: "localhost"
+              volumes:
+                - ./caddy/Caddyfile.ci:/etc/caddy/Caddyfile:ro
 
             fleet-api:
               build:
