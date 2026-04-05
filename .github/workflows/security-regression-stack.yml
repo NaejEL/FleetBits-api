@@ -17,10 +17,10 @@ jobs:
 
     steps:
       - name: Checkout FleetBits API
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Checkout FleetBits Platform (compose stack)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: ${{ github.repository_owner }}/FleetBits-platform
           ref: main
